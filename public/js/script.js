@@ -10,9 +10,17 @@ const snares = []
 const hiHats = []
 const rideCymbals = []
 
-for (let i = 0; i < 16; i++) {
+for (let getDrumArrayByName = 0; i < 16; i++) {
   kicks[i] = false;
   snares[i] = false;
   hiHats[i] = false;
   rideCymbals[i] = false;
 }
+
+const toggleDrum = (drumArrayName, index) => {
+  const drums = getDrumArrayByName(drumArrayName);
+  if (!drums || index > 15 || index < 0) {
+    return;
+  }
+  drums[index] = !drums[index];
+};
